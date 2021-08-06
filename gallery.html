@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .img{
+            width: 640px;
+            height: 480px;
+        }
+
+        .arrows{
+            height: 5vh;
+        }
+    </style>
+    <title>Gallery</title>
+</head>
+<body>
+    <div class="gallery">
+        <img src="imgs/1.jpg" id="img" class="img" >
+        <br>
+        <img src="imgs/imgbin-computer-icons-left-arrow-JHVdWAi8E5MbEiUrMEvtgma9M.jpg"  class="arrows" onclick="left_arrow()"/>
+        <img src="imgs/right.jpg" class="arrows" onclick="right_arrow()"/>
+    </div>
+
+    <script>
+        let mas = ["imgs/1.jpg", "imgs/2.jpg", "imgs/3.jpg", "imgs/4.jpg", "imgs/5.jpg"]
+        let to = -1;
+
+        function right_arrow(){
+            let obj = document.getElementById('img');
+            if(to < mas.length-1) to++
+                else
+                    to=0;
+                    obj.src=mas[to];
+        }
+
+        function left_arrow(){
+            let obj = document.getElementById('img');
+            if (to>0) to--;
+                else
+                    to= mas.length-1;
+                    obj.src=mas[to];
+        }
+    </script>
+</body>
+</html>
